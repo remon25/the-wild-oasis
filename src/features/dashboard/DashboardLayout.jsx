@@ -22,11 +22,10 @@ export default function DashboardLayout() {
     confirmedStays,
     numDays,
   } = useRecentStays();
-  const { cabins } = useGetCabins();
+  const { cabins } = useGetCabins() || [];
 
   if (isLodingBooking || isLoadingStays) return <Spinner />;
 
-  console.log(booking);
   return (
     <StyledDashboardLayout>
       <Stats
